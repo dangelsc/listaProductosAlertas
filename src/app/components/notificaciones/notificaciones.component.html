@@ -1,0 +1,17 @@
+<a class="nav-link" data-toggle="dropdown" href="#">
+    <i class="far {{tipo==1?'fa-bell':'fa-edit'}}"></i>
+    <span class="badge badge-warning navbar-badge">{{lista.length}}</span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+    <span class="dropdown-item dropdown-header">{{lista.length}} Notificationes {{tipo==1?'Pronto vencera':'Vencidos'}}</span>
+    <div class="dropdown-divider"></div>
+    
+    <a *ngFor="let item of lista" href="#" class="dropdown-item  {{tipo==2?'alert-danger':'alert-warning'}}">
+      <i class="fas fa-box-full mr-2"></i> {{item.nombre}}
+      <span class="float-right text-muted text-sm">{{item.fechaVencimiento.toDate()|date:'dd/MM/yyyy'}}</span>
+    </a>
+    
+    <!--
+    <div class="dropdown-divider"></div>
+    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+  </div>-->

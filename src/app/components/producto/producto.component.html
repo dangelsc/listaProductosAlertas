@@ -1,0 +1,53 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Producto</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Producto</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+
+   <!-- /.content-header -->
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid page-content">
+       
+
+
+<button (click)="nuevoProd()">+</button>
+
+<table>
+    <tr>
+        <th>
+            Nombre producto
+        </th>
+        <th>Categoria</th>
+        <th>Fecha vencimiento</th>
+        <th>Cantidad</th>
+        <th>precio</th>
+    </tr>
+    <tr *ngFor="let item of lista" style="background-color: 
+    {{verificaFechaVencida(item)}};" 
+    title="{{verificaFechaVencidaMessage(item)}}">
+        <td>{{item.nombre}}</td>
+        <td>{{item.categoria}}</td>
+        <td>{{item.fechaVencimiento|date:'dd/MM/YYYY'}}</td>
+        <td>{{item.cantidad|number:'2.02'}}</td>
+        <td>{{item.precio|number:'2.2'}}</td>
+        <td  > edit</td>
+        <td> borrar</td>
+    </tr>
+</table>
+
+
+
+
+</div>
+</section>
